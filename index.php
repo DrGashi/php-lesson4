@@ -35,6 +35,7 @@
     $test = maximum($a, $b);
     echo "the biggest number between $a and $b is $test <br>";
 
+    echo "<br>";
     function oddEven($n){
         if($n % 2 == 0){
             return "$n is even";
@@ -53,6 +54,7 @@
         echo "$y <br>";
     }
     localvar();
+    echo "<br>";
     $x = 10;
     $y = 5;
     function globalVar(){
@@ -60,12 +62,14 @@
         $sum = $x + $y;
         echo "$x + $y = $sum <br>";
     }
+    echo "<br>";
     globalVar();
     function staticVar(){
         static $counter = 1;
         echo "counter value is: $counter <br>";
         $counter++;
     }
+    echo "<br>";
     staticVar();
     staticVar();
     staticVar();
@@ -75,13 +79,28 @@
 
     //arrays
 
-    $sports = ["Football", "Basketball", "Voleyball", "Handball"];
+    echo "<br>";
+    $sports = ["sport1", "Football", "Basketball", "Volleyball", "Handball", "last sport"];
+    array_pop($sports);
+    array_shift($sports);
+    array_push($sports, "Tennis");
+    array_unshift($sports, "Ping pong");
+    array_splice($sports, 0, 1, "Ping Pong");
     echo "$sports[0] <br>";
     echo end($sports);
     echo "<br>";
+    echo "<br>";
     echo count($sports);
+    echo "<br>";
     echo "<br>";
     for($i = 0; $i < count($sports); $i++){
         echo "$sports[$i] <br>";
     }
+    echo "<br>";
+
+    $cars = ["Lamborghini", "Ferrari", "Koenigsegg", "Bugatti"];
+    for($i = 0; $i < count($cars); $i++){
+        echo "<p style='margin: 0; color: white; background-color: black; width: max-content; padding: 5px; cursor: pointer; '>$cars[$i]</p>";
+    }
+
 ?>
